@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <style type="text/css">
+        div {
+            /*border: 1px solid;*/
+            display: flex;
+        }
+        
+        html {
+            font-family: DejaVu Sans Mono, monospace;
+            font-size: large;
+        }
+        
+        .titulo {
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            background-color: #d3d3d3;
+        }
+        
+        .toolbar {
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+        }
+        
+        .content {
+            align-items: center;
+            justify-content: center;
+            text-align: justify;
+        }
+        
+        .content p {
+            padding: 20px;
+        }
+        
+        img {
+            padding: 10px;
+        }
+        
+        .footer {
+            background-color: #ecdcff;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        ul,
+        ol {
+            list-style: none;
+        }
+        
+        .nav>li {
+            float: left;
+        }
+        
+        .nav li a {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 10px 12px;
+            display: block;
+        }
+        
+        .nav li a:hover {
+            background-color: #eddcff;
+        }
+        
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+        }
+        
+        .nav li:hover>ul {
+            display: block;
+        }
+        
+        .nav li ul li {
+            position: relative;
+        }
+        
+        .nav li ul li ul {
+            right: -140px;
+            top: 0px;
+        }
+        
+        aside {
+            width: 20%;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+
+</head>
+<header>
+    <div class="titulo">
+        <h1>SINTAXIS Y SELECTORES CSS</h1>
+    </div>
+</header>
+
+<body>
+    <div class="toolbar">
+        <nav>
+            <ul class="nav">
+                <li><a href="http://127.0.0.1:5500/index.html">INICIO</a></li>
+                <li><a href="">TEMAS</a>
+                    <ul>
+                        <li><a href="http://127.0.0.1:5500/index3.html">PSEUDOCLASES</a></li>
+                        <li><a href="http://127.0.0.1:5500/index2.html">PSEUDOELEMENTOS</a></li>
+                    </ul>
+                </li>
+                <li><a href="">RECURSOS MULTIMEDIA</a>
+                    <ul>
+                        <li><a href="http://127.0.0.1:5500/index4.html">VIDEO</a></li>
+                        <li><a href="http://127.0.0.1:5500/index5.html">CULTURA POPULAR</a></li>
+                    </ul>
+                </li>
+                <li><a href="">APRENDIZAJE</a>
+                    <ul>
+                        <li><a href="">OPCION1</a></li>
+                        <li><a href="">OPCION2</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://127.0.0.1:5500/index6.html">AUTOR</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="toolbar">
+        <h3>INICIANDO EN CSS</h3>
+    </div>
+    <div class="content">
+        <section>
+            <img src="css.png" width="976" height="377" alt="">
+            <img src="css2.png" width="470" height="377" alt="">
+            <p>Selectores CSS Los selectores definen sobre qué elementos se aplicará un conjunto de reglas CSS. Selectores básicos Selector de tipo Selecciona todos los elementos que coinciden con el nombre del elemento especificado. Sintaxis: eltname Ejemplo:
+                input se aplicará a cualquier elemento
+                <-input>. Selector de clase Selecciona todos los elementos que tienen el atributo de class especificado. Sintaxis: .classname Ejemplo: .index seleccionará cualquier elemento que tenga la clase "index". Selector de ID Selecciona un elemento basándose
+                    en el valor de su atributo id. Solo puede haber un elemento con un determinado ID dentro de un documento. Sintaxis: #idname Ejemplo: #toc se aplicará a cualquier elemento que tenga el ID "toc". Selector universal Selecciona todos los
+                    elementos. Opcionalmente, puede estar restringido a un espacio de nombre específico o a todos los espacios de nombres. Sintaxis: * ns|* *|* Ejemplo: * se aplicará a todos los elementos del documento. Selector de atributo Selecciona
+                    elementos basándose en el valor de un determinado atributo. Sintaxis: [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value] Ejemplo: [autoplay] seleccionará todos los elementos que tengan el atributo
+                    "autoplay" establecido (a cualquier valor). Combinadores Combinador de hermanos adyacentes El combinador + selecciona hermanos adyacentes. Esto quiere decir que el segundo elemento sigue directamente al primero y ambos comparten el
+                    mismo elemento padre. Sintaxis: A + B Ejemplo: La regla h2 + p se aplicará a todos los elementos
+                    <-p> que siguen directamente a un elemento
+                        <-h2> (en-US). Combinador general de hermanos El combinador ~ selecciona hermanos. Esto quiere decir que el segundo elemento sigue al primero (no necesariamente de forma inmediata) y ambos comparten el mismo elemento padre. Sintaxis:
+                            A ~ B Ejemplo: La regla p ~ span se aplicará a todos los elementos
+                            <-span> que siguen un elemento
+                                <-p>. Combinador de hijo El combinador > selecciona los elementos que son hijos directos del primer elemento. Sintaxis: A > B Ejemplo: La regla ul > li se aplicará a todos los elementos
+                                    <-li> que son hijos directos de un elemento
+                                        <-ul>. Combinador de descendientes El combinador (espacio) selecciona los elementos que son descendientes del primer elemento. Sintaxis: A B Ejemplo: La regla div span se aplicará a todos los elementos
+                                            <-span> que están dentro de un elemento
+                                                <-div>. Combinador de columna Experimental El combinador || selecciona los elementos especificados pertenecientes a una columna. Sintaxis: A || B Ejemplo: col || td seleccionará todos los elementos
+                                                    <-td> que pertenezcan al ámbito de
+                                                        <-col>. </p>
+        </section>
+
+        <aside>
+            <p>CONOCE NUESTRA UNIVERSIDAD CON MAS DE 40 AÑOS DE HISTORIA! ENCUENTRA AQUI ENLACES SOBRE NUESTRO TRABAJO</p>
+            <div>
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Funad.ejecafetero%2Fposts%2F5330648776979283&show_text=true&width=500" width="500" height="491" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+            <div>
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Funad.ejecafetero%2Fposts%2F5324664014244426&show_text=true&width=500" width="500" height="760" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                    allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+<footer>
+    <div class="footer">
+        <P>Todos los derechos reservados - 2022</P>
+    </div>
+</footer>
+
+</html>
